@@ -28,7 +28,6 @@ class Product extends Structure<Product> {
       'active': active,
       'price': price,
       'unity': unity.index,
-      'partner': partner
     };
   }
 

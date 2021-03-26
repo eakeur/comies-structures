@@ -38,7 +38,7 @@ class Product extends Structure<Product> {
     partnerId = map['partnerId'];
     code = map['code'];
     min = map['min'];
-    active = map['active'];
+    active = map['active'] == 1;
     price = map['price'];
     unity = Unity.values[map['unity']];
   }

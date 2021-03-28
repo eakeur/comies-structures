@@ -18,7 +18,7 @@ class Address extends Structure<Address> {
   List<Order> orders;
 
   @override
-  void fromMap(Map<String, dynamic> addr){
+  Address fromMap(Map<String, dynamic> addr){
     id = addr['id'];
     costumerId = addr['costumerId'];
     cep = addr['cep'];
@@ -30,6 +30,7 @@ class Address extends Structure<Address> {
     city = addr['city'];
     state = addr['state'];
     country = addr['country'];
+    return this;
   }
 
   @override

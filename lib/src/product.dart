@@ -32,7 +32,7 @@ class Product extends Structure<Product> {
   }
 
   @override
-  void fromMap(Map<String, dynamic> map) {
+  Product fromMap(Map<String, dynamic> map) {
     id = map['id'];
     name = map['name'];
     partnerId = map['partnerId'];
@@ -41,6 +41,7 @@ class Product extends Structure<Product> {
     active = map['active'] == 1;
     price = map['price'];
     unity = Unity.values[map['unity']];
+    return this;
   }
   
 }

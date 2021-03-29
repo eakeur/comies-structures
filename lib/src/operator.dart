@@ -45,7 +45,7 @@ class Operator extends Structure<Operator> {
     profileId = map['profileId'];
     partnerId = map['partnerId'];
     storeId = map['storeId'];
-    active = map['active'];
+    active = map['active'] == 1;
     return this;
   }
 }

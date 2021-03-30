@@ -25,7 +25,7 @@ class Product extends Structure<Product> {
       'name': name,
       'code': code,
       'min': min,
-      'active': active,
+      'active': active ? 1 : 0,
       'price': price,
       'unity': unity.index,
     };

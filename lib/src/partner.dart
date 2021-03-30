@@ -36,7 +36,7 @@ class Partner extends Structure<Partner> {
     return {
       'id': id,
       'name': name,
-      'active': active,
+      'active': active ? 1 : 0,
     };
   }
 

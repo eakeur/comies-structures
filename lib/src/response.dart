@@ -19,7 +19,7 @@ class Response<T> extends Structure<Response<T>> {
   @override
   Response<T> fromMap(Map<String, dynamic> map){
     message = map['message'];
-    success = map['success'];
+    success = map['success'] == 1;
     access = map['access'];
     data = map['data'];
     notification = Notification().fromMap(map['notification']);
@@ -30,7 +30,7 @@ class Response<T> extends Structure<Response<T>> {
   Map<String, dynamic> toMap(){
     return {
       'message': message,
-      'success': success,
+      'success': success ? 1 : 0,
       'access':  access,
       'data': data,
       'notification': notification.toMap()

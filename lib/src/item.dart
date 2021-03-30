@@ -31,7 +31,7 @@ class Item extends Structure<Item> {
       'id': id,
       'discount': discount,
       'group': group,
-      'done': done,
+      'done': done ? 1 : 0,
       'orderId': orderId,
       'productId': productId,
       'quantity': quantity,

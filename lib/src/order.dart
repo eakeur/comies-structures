@@ -32,7 +32,7 @@ class Order extends Structure<Order> {
   Map<String, dynamic> toMap(){
     return {
         'id': id,
-        'active': active,
+        'active': active ? 1 : 0,
         'observations': observations,
         'addressId': addressId,
         'operatorId': operatorId,

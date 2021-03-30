@@ -26,7 +26,7 @@ class Configuration extends Structure {
       'partnerId': partnerId,
       'key': key,
       'value': value,
-      'active': active
+      'active': active ? 1 : 0
     };
   }
 }

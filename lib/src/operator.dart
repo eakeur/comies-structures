@@ -28,7 +28,7 @@ class Operator extends Structure<Operator> {
       'identification': identification,
       'password': password,
       'lastLogin': lastLogin,
-      'active': active,
+      'active': active ? 1 : 0,
       'partnerId': partnerId,
       'storeId': storeId,
       'profileId': profileId 

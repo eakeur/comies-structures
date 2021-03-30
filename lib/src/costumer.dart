@@ -22,7 +22,7 @@ class Costumer extends Structure {
   @override
   Map<String, dynamic> toMap(){
     return {
-      'id': id, 'name': name, 'active': active
+      'id': id, 'name': name, 'active': active ? 1 : 0
     };
   }
 }

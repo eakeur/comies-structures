@@ -40,7 +40,7 @@ class Order extends Structure<Order> {
         'costumerId': costumerId,
         'deliverType': deliverType.index,
         'payment': payment.index,
-        if (placed != null) 'placed': placed.toIso8601String(),
+        'placed': placed != null ? placed.toIso8601String() : placed,
         'price': price,
         'status': status.index,
       };

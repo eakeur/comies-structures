@@ -27,7 +27,7 @@ class Operator extends Structure<Operator> {
       'name': name,
       'identification': identification,
       'password': password,
-      if (lastLogin != null)'lastLogin': lastLogin.toIso8601String(),
+      'lastLogin': lastLogin != null ? lastLogin.toIso8601String() : lastLogin,
       'active': active ? 1 : 0,
       'partnerId': partnerId,
       'storeId': storeId,

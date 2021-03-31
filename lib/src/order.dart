@@ -57,7 +57,7 @@ class Order extends Structure<Order> {
     deliverType = DeliverType.values[map['deliverType']];
     operatorId = map['operatorId'];
     payment = PaymentMethod.values[map['payment']];
-    placed = map['placed'];
+    placed = (map['placed'] is DateTime) ? map['placed'] : DateTime.parse(map['placed']);
     price =  map['price'];
     status = Status.values[map['status']];
     store = map['storeId'];

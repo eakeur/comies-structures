@@ -27,7 +27,7 @@ class Operator extends Structure<Operator> {
       'name': name,
       'identification': identification,
       'password': password,
-      'lastLogin': lastLogin,
+      'lastLogin': lastLogin.toIso8601String(),
       'active': active ? 1 : 0,
       'partnerId': partnerId,
       'storeId': storeId,
@@ -41,7 +41,7 @@ class Operator extends Structure<Operator> {
     name = map['name'];
     identification = map['identification'];
     password = map['password'];
-    lastLogin =  map['lastLogin'];
+    lastLogin = (map['lastLogin'] is DateTime) ? map['lastLogin'] : DateTime.parse(map['lastLogin']);
     profileId = map['profileId'];
     partnerId = map['partnerId'];
     storeId = map['storeId'];

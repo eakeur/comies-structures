@@ -40,7 +40,7 @@ class Order extends Structure<Order> {
         'costumerId': costumerId,
         'deliverType': deliverType.index,
         'payment': payment.index,
-        'placed': placed.toIso8601String(),
+        if (placed != null) 'placed': placed.toIso8601String(),
         'price': price,
         'status': status.index,
       };
@@ -57,7 +57,7 @@ class Order extends Structure<Order> {
     deliverType = DeliverType.values[map['deliverType']];
     operatorId = map['operatorId'];
     payment = PaymentMethod.values[map['payment']];
-    placed = (map['placed'] is DateTime) ? map['placed'] : DateTime.parse(map['placed']);
+    placed = (map['placed'] is DateTime) ? map['placed'] : map['placed'] != null ? DateTime.parse(map['placed']) : null;
     price =  map['price'];
     status = Status.values[map['status']];
     store = map['storeId'];

@@ -1,8 +1,7 @@
 import 'package:comies_structures/comies_structures.dart';
-import 'package:comies_structures/src/structure.dart';
 
 /// A group of settings that will allow or disallow operators to do things
-class Profile extends Structure {
+class Profile {
   ///The profile id
   int id;
   int partnerId;
@@ -46,8 +45,7 @@ class Profile extends Structure {
 
   List<Operator> operators;
 
-  @override
-  Profile fromMap(Map<String, dynamic> map){
+  Profile.fromMap(Map<String, dynamic> map){
     name = map['name'];
     canAddProducts = map['canAddProducts'] == 1;
     canGetProducts = map['canGetProducts'] == 1;
@@ -61,20 +59,32 @@ class Profile extends Structure {
     canGetOrders= map['canGetOrders'] == 1;
     canUpdateOrders = map['canUpdateOrders'] == 1;
     canRemoveOrders = map['canRemoveOrders'] == 1;
-    canAddProducts = map['canAddProducts'] == 1;
-    canGetProducts = map['canGetProducts'] == 1;
-    canUpdateProducts = map['canUpdateProducts'] == 1;
-    canRemoveProducts = map['canRemoveProducts'] == 1;
     canAddStores = map['canAddStores'] == 1;
     canGetStores = map['canGetStores'] == 1;
     canUpdateStores = map['canUpdateStores'] == 1;
     canRemoveStores = map['canRemoveStores'] == 1;
-    return this;
   }
 
   @override 
   Map<String, dynamic> toMap(){
-    return {};
+    return {
+      'canAddProducts': canAddProducts ? 1 : 0 ,
+      'canGetProducts': canGetProducts ? 1 : 0 ,
+      'canUpdateProducts': canUpdateProducts ? 1 : 0 ,
+      'canRemoveProducts': canRemoveProducts ? 1 : 0 ,
+      'canAddCostumers': canAddCostumers ? 1 : 0 ,
+      'canGetCostumers': canGetCostumers ? 1 : 0 ,
+      'canUpdateCostumers': canUpdateCostumers ? 1 : 0 ,
+      'canRemoveCostumers': canRemoveCostumers ? 1 : 0 ,
+      'canAddOrders': canAddOrders ? 1 : 0 ,
+      'canGetOrders': canGetOrders ? 1 : 0 ,
+      'canUpdateOrders': canUpdateOrders ? 1 : 0 ,
+      'canRemoveOrders': canRemoveOrders ? 1 : 0 ,
+      'canAddStores': canAddStores ? 1 : 0 ,
+      'canGetStores': canGetStores ? 1 : 0 ,
+      'canUpdateStores': canUpdateStores ? 1 : 0 ,
+      'canRemoveStores': canRemoveStores ? 1 : 0 
+    };
   }
   
 

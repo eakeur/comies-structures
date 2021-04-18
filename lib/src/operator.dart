@@ -2,9 +2,8 @@ import 'package:comies_structures/comies_structures.dart';
 import 'package:comies_structures/src/order.dart';
 import 'package:comies_structures/src/profile.dart';
 import 'package:comies_structures/src/store.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Operator extends Structure<Operator> {
+class Operator {
   int id;
   int profileId;
   int storeId;
@@ -20,7 +19,6 @@ class Operator extends Structure<Operator> {
   bool active;
 
 
-  @override
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -35,8 +33,7 @@ class Operator extends Structure<Operator> {
     };
   }
 
-  @override
-  Operator fromMap(Map<String, dynamic> map) {
+  Operator.fromMap(Map<String, dynamic> map) {
     id = map['id'];
     name = map['name'];
     identification = map['identification'];
@@ -46,6 +43,5 @@ class Operator extends Structure<Operator> {
     partnerId = map['partnerId'];
     storeId = map['storeId'];
     active = map['active'] == 1;
-    return this;
   }
 }

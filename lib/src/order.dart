@@ -3,11 +3,10 @@ import 'package:comies_structures/src/costumer.dart';
 import 'package:comies_structures/src/enum.dart';
 import 'package:comies_structures/src/item.dart';
 import 'package:comies_structures/src/store.dart';
-import 'package:comies_structures/src/structure.dart';
 
 import 'operator.dart';
 
-class Order extends Structure<Order> {
+class Order {
   int id;
   int addressId;
   int operatorId;
@@ -28,7 +27,6 @@ class Order extends Structure<Order> {
   double price;
   bool active;
 
-  @override
   Map<String, dynamic> toMap(){
     return {
         'id': id,
@@ -46,8 +44,7 @@ class Order extends Structure<Order> {
       };
   }
 
-  @override
-  Order fromMap(Map<String, dynamic> map){
+  Order.fromMap(Map<String, dynamic> map){
 
     id = map['id'];
     active = map['active'] == 1;
@@ -61,7 +58,5 @@ class Order extends Structure<Order> {
     price =  map['price'];
     status = Status.values[map['status']];
     store = map['storeId'];
-    return this;
-
   } 
 }

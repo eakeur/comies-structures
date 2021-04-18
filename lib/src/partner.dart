@@ -3,9 +3,8 @@ import 'package:comies_structures/src/operator.dart';
 import 'package:comies_structures/src/product.dart';
 import 'package:comies_structures/src/profile.dart';
 import 'package:comies_structures/src/store.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Partner extends Structure<Partner> {
+class Partner{
   /// The partner's database ID
   int id;
 
@@ -30,8 +29,6 @@ class Partner extends Structure<Partner> {
   /// Check if the partner is active in our registers
   bool active;
 
-
-  @override
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -40,11 +37,10 @@ class Partner extends Structure<Partner> {
     };
   }
 
-  @override
-  Partner fromMap(Map<String, dynamic> map){
+
+  Partner.fromMap(Map<String, dynamic> map){
     id = map['id'];
     name = map['name'];
     active = map['active'] == 1;
-    return this;
   }
 }

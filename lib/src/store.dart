@@ -1,7 +1,6 @@
 import 'package:comies_structures/comies_structures.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Store extends Structure<Store> {
+class Store{
   ///The store id
   int id;
 
@@ -19,7 +18,6 @@ class Store extends Structure<Store> {
   /// The operators that has access to this store
   List<Operator> operators;
 
-  @override
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -28,11 +26,9 @@ class Store extends Structure<Store> {
     };
   }
 
-  @override
-  Store fromMap(Map<String, dynamic> map){
+  Store.fromMap(Map<String, dynamic> map){
     id = map['id'];
     name = map['name'];
     partnerId = map['partnerId'];
-    return this;
   }
 }

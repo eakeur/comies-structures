@@ -1,8 +1,6 @@
 import 'package:comies_structures/comies_structures.dart';
-import 'package:comies_structures/src/costumer.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Address extends Structure<Address> {
+class Address{
   int id;
   int costumerId;
   String cep;
@@ -17,8 +15,7 @@ class Address extends Structure<Address> {
   Costumer costumer;
   List<Order> orders;
 
-  @override
-  Address fromMap(Map<String, dynamic> addr){
+  Address.fromMap(Map<String, dynamic> addr){
     id = addr['id'];
     costumerId = addr['costumerId'];
     cep = addr['cep'];
@@ -30,10 +27,8 @@ class Address extends Structure<Address> {
     city = addr['city'];
     state = addr['state'];
     country = addr['country'];
-    return this;
   }
-
-  @override
+  
   Map<String, dynamic> toMap(){
     return {
       'id': id,

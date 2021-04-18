@@ -1,7 +1,6 @@
 import 'package:comies_structures/src/notification.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Response<T> extends Structure<Response<T>> {
+class Response<T>{
   String message;
   bool success;
   String access;
@@ -16,17 +15,14 @@ class Response<T> extends Structure<Response<T>> {
 
 
 
-  @override
-  Response<T> fromMap(Map<String, dynamic> map){
+  Response.fromMap(Map<String, dynamic> map){
     message = map['message'];
     success = map['success'] == 1;
     access = map['access'];
     data = map['data'];
-    notification = Notification().fromMap(map['notification']);
-    return this;
+    notification = Notification.fromMap(map['notification']);
   }
 
-  @override
   Map<String, dynamic> toMap(){
     return {
       'message': message,

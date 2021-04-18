@@ -1,9 +1,8 @@
 import 'package:comies_structures/comies_structures.dart';
 import 'package:comies_structures/src/enum.dart';
 import 'package:comies_structures/src/order.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Product extends Structure<Product> {
+class Product {
   int id;
   int partnerId;
   String name;
@@ -17,7 +16,6 @@ class Product extends Structure<Product> {
   List<Order> orders;
 
 
-  @override
   Map<String, dynamic> toMap(){
     return {
       'id': id,
@@ -31,8 +29,7 @@ class Product extends Structure<Product> {
     };
   }
 
-  @override
-  Product fromMap(Map<String, dynamic> map) {
+  Product.fromMap(Map<String, dynamic> map) {
     id = map['id'];
     name = map['name'];
     partnerId = map['partnerId'];
@@ -41,7 +38,6 @@ class Product extends Structure<Product> {
     active = map['active'] == 1;
     price = map['price'];
     unity = Unity.values[map['unity']];
-    return this;
   }
   
 }

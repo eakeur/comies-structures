@@ -1,7 +1,6 @@
 import 'package:comies_structures/src/action.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Notification extends Structure {
+class Notification{
   String message;
   Action action;
 
@@ -11,14 +10,11 @@ class Notification extends Structure {
     }
   }
 
-  @override
-  Notification fromMap(Map<String, dynamic> map){
+  Notification.fromMap(Map<String, dynamic> map){
     message = map['message'];
-    action = Action().fromMap(map['action']);
-    return this;
+    action = Action.fromMap(map['action']);
   }
 
-  @override
   Map<String, dynamic> toMap(){
     return {
       'message': message,

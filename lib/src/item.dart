@@ -1,8 +1,7 @@
 import 'package:comies_structures/src/order.dart';
 import 'package:comies_structures/src/product.dart';
-import 'package:comies_structures/src/structure.dart';
 
-class Item extends Structure<Item> {
+class Item{
   int id;
   int orderId;
   int productId;
@@ -13,8 +12,7 @@ class Item extends Structure<Item> {
   double discount;
   int group;
 
-  @override
-  Item fromMap(Map<String, dynamic> map){
+  Item.fromMap(Map<String, dynamic> map){
     id = map['id'];
     orderId = map['orderId'];
     productId = map['productId'];
@@ -22,10 +20,9 @@ class Item extends Structure<Item> {
     quantity = map['quantity'];
     discount = map['discount'];
     group = map['group'];
-    return this;
+
   }
 
-  @override
   Map<String, dynamic> toMap(){
     return {
       'id': id,
